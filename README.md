@@ -8,6 +8,8 @@
   4. BootStrap
   5. XML
   6. JSP
+  7. Google Chart
+  
 * BackEnd
   1. Java
      - MVC Pattern
@@ -24,3 +26,5 @@
  * * *
  
 ## Main Page ScreenShot
+
+![main](https://user-images.githubusercontent.com/40975942/63912649-88150800-ca68-11e9-9f66-0730582620ed.JPG)

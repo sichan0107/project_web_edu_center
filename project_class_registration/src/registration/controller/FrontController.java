@@ -38,7 +38,7 @@ public class FrontController extends HttpServlet {
 		String command = request.getParameter("command");
 		try {
 
-			// 학생 컨트롤러
+			// student
 			if (command.equals("createStudent")) {
 				createStudent(request, response);
 			} else if (command.equals("getAllStudent")) {
@@ -50,7 +50,7 @@ public class FrontController extends HttpServlet {
 			} else if (command.equals("studentDelete")) {
 				studentDelete(request, response);
 			}
-			// 강의 컨트롤러
+			// class
 			else if (command.equals("createClass")) {
 				createClass(request, response);
 			} else if (command.equals("getAllClass")) {
@@ -66,7 +66,7 @@ public class FrontController extends HttpServlet {
 			} else if (command.equals("getAllChart")) {
 				getAllChart(request, response);
 			}
-			// 신청 컨트롤러(수정은 필요 없음)
+			// registration
 			else if (command.equals("createRegistration")) {
 				createRegistration(request, response);
 			} else if (command.equals("getAllRegistration")) {
@@ -76,7 +76,7 @@ public class FrontController extends HttpServlet {
 			} else if (command.equals("registrationDelete")) {
 				registrationDelete(request, response);
 			}
-			// 평가 컨트롤러(전체보기? 강의 검색으로 그 강의의 여러 평가 리스트 따라서 하나만나와선 안됨.)
+			// evaluation
 			else if (command.equals("getEvaluation")) {
 				getEvaluation(request, response);
 			} else if (command.equals("createEvaluation")) {
@@ -86,7 +86,7 @@ public class FrontController extends HttpServlet {
 			} else if (command.equals("deleteEvaluation")) {
 				deleteEvaluation(request, response);
 			}
-			// 소개 컨트롤러(강사소개인지? 아니면 강의 소개인지?)
+			// introduction
 			else if (command.equals("createIntroduction")) {
 				createIntroduction(request, response);
 			} else if (command.equals("getIntroduction")) {
@@ -96,7 +96,7 @@ public class FrontController extends HttpServlet {
 			} else if (command.equals("deleteIntroduction")) {
 				deleteIntroduction(request, response);
 			}
-			// 강사 컨트롤러
+			// teacher
 			else if (command.equals("getAllTeacher")) {
 				getAllTeacher(request, response);
 			} else if (command.equals("getTeacher")) {
@@ -108,7 +108,7 @@ public class FrontController extends HttpServlet {
 			} else if (command.equals("deleteTeacher")) {
 				deleteTeacher(request, response);
 			}
-			// 과거 수강이력
+			// pastRegistration
 			 else if (command.equals("createQuestion")) {
 				createQuestion(request, response);
 			} else if (command.equals("getAllQuestion")) {
@@ -122,9 +122,9 @@ public class FrontController extends HttpServlet {
 		}
 	}
 
-	// ========================학생 컨트롤러(Student)=========================
+	// ======================== Student =========================
 
-	// 학생 가입 메소드
+	// sign up student
 	protected void createStudent(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "showError.jsp";
@@ -153,7 +153,7 @@ public class FrontController extends HttpServlet {
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 
-	// 모든 학생 검색 메소드
+	// search all students
 	public void getAllStudent(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "showError.jsp";
@@ -167,7 +167,7 @@ public class FrontController extends HttpServlet {
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 
-	// 특정 학생 검색 메소드
+	// search student
 	public void getStudent(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "showError.jsp";
@@ -182,7 +182,7 @@ public class FrontController extends HttpServlet {
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 
-	// 학생 정보 수정 메소드
+	// update student info
 	public void studentUpdate(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "showError.jsp";
@@ -199,7 +199,7 @@ public class FrontController extends HttpServlet {
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 
-	// 학생 탈퇴 메소드
+	// delete student
 	public void studentDelete(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "showError.jsp";
@@ -222,9 +222,9 @@ public class FrontController extends HttpServlet {
 		}
 	}
 
-	// ========================강의 컨트롤러(Class)=========================
+	// ======================== Class =========================
 
-	// 강의 추가 메소드
+	// add class info
 	protected void createClass(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "showError.jsp";
@@ -266,7 +266,7 @@ public class FrontController extends HttpServlet {
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 
-	// 모든 강의 검색 메소드
+	// search all classes
 	public void getAllClass(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "showError.jsp";
@@ -280,7 +280,7 @@ public class FrontController extends HttpServlet {
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 
-	// 특정 강의 검색 메소드
+	// search a class
 	public void getClass(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "showError.jsp";
@@ -295,7 +295,6 @@ public class FrontController extends HttpServlet {
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 
-	// 특정강의 검색 메소드
 	public void getClassById(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "showError.jsp";
@@ -310,7 +309,6 @@ public class FrontController extends HttpServlet {
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 
-	// 특정 강의 수정 메소드
 	public void classUpdate(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "showError.jsp";
@@ -336,7 +334,6 @@ public class FrontController extends HttpServlet {
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 
-	// 강의 삭제 메소드
 	public void classDelete(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "showError.jsp";
@@ -374,9 +371,8 @@ public class FrontController extends HttpServlet {
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 
-	// ========================신청 컨트롤러(Registration)=========================
+	// ======================== Registration =========================
 
-	// 강의 신청 메소드
 	protected void createRegistration(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "showError.jsp";
@@ -417,7 +413,6 @@ public class FrontController extends HttpServlet {
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 
-	// 신청 목록 전체 검색
 	public void getAllRegistration(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "showError.jsp";
@@ -431,7 +426,6 @@ public class FrontController extends HttpServlet {
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 
-	// 특정 신청 검색 메소드
 	public void getRegistration(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "showError.jsp";
@@ -446,7 +440,6 @@ public class FrontController extends HttpServlet {
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 
-	// 신청 철회 메소드
 	public void registrationDelete(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "showError.jsp";
@@ -469,9 +462,8 @@ public class FrontController extends HttpServlet {
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 
-	// ========================평가 컨트롤러(Evaluation)=========================
+	// ======================== Evaluation =========================
 
-	// 평가 작성 메소드
 	protected void createEvaluation(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "showError.jsp";
@@ -502,7 +494,6 @@ public class FrontController extends HttpServlet {
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 
-	// 특정 평가 검색 메소드
 	public void getEvaluation(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "showError.jsp";
@@ -517,7 +508,6 @@ public class FrontController extends HttpServlet {
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 
-	// 평가 수정 메소드
 	public void updateEvaluation(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "showError.jsp";
@@ -535,7 +525,6 @@ public class FrontController extends HttpServlet {
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 
-	// 평가 삭제 메소드
 	public void deleteEvaluation(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "showError.jsp";
@@ -559,9 +548,8 @@ public class FrontController extends HttpServlet {
 		}
 	}
 
-	// ========================소개 컨트롤러(Introduction)=========================
+	// ======================== Introduction =========================
 
-	// 강사 소개 추가 메소드
 	protected void createIntroduction(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "showError.jsp";
@@ -593,7 +581,6 @@ public class FrontController extends HttpServlet {
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 
-	// 특정 소개 검색 메소드
 	public void getIntroduction(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "showError.jsp";
@@ -608,7 +595,6 @@ public class FrontController extends HttpServlet {
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 
-	// 소개 수정 메소드
 	public void updateIntroduction(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "showError.jsp";
@@ -626,7 +612,6 @@ public class FrontController extends HttpServlet {
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 
-	// 신청 철회 메소드
 	public void deleteIntroduction(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "showError.jsp";
@@ -650,9 +635,8 @@ public class FrontController extends HttpServlet {
 		}
 	}
 
-	// ========================강사 컨트롤러(Teacher)=========================
+	// ======================== Teacher =========================
 
-	// 강사 가입 메소드
 	protected void createTeacher(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "showError.jsp";
@@ -682,7 +666,6 @@ public class FrontController extends HttpServlet {
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 
-	// 모든 강사 검색 메소드
 	public void getTeacher(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "showError.jsp";
@@ -696,7 +679,6 @@ public class FrontController extends HttpServlet {
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 
-	// 특정 강사 검색 메소드
 	public void getAllTeacher(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "showError.jsp";
@@ -711,7 +693,6 @@ public class FrontController extends HttpServlet {
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 
-	// 강사 정보 수정 메소드
 	public void updateTeacher(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "showError.jsp";
@@ -729,7 +710,6 @@ public class FrontController extends HttpServlet {
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 
-	// 강사 탈퇴 메소드
 	public void deleteTeacher(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "showError.jsp";
@@ -751,12 +731,6 @@ public class FrontController extends HttpServlet {
 			request.getRequestDispatcher(url).forward(request, response);
 		}
 	}
-
-
-
-
-
-
 
 	public void createQuestion(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

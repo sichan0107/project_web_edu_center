@@ -13,7 +13,7 @@
 * BackEnd
   1. Java
      - MVC Pattern
-        - Servlet(Command)
+        - Servlet(Command) & JSP
         
   2. Oracle
      - JDBC
